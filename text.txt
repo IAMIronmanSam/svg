@@ -1,0 +1,26 @@
+    var path={
+    gridH:[
+    //1st Row
+    {'x':0,'y':0},
+    {'x':15,'y':250},
+    {'x':1320,'y':15}
+    ],
+    gridV:[
+        {'x':220,'y':15},
+        {'x':20,'y':220}
+          ]
+};
+    var canvas = Raphael('playground', 1350, 660);
+    var wrapper = {};
+    wrapper=canvas.rect(0, 0, 1350, 660);  
+    wrapper.attr("fill","#3F3F3F");
+    for(var v in path.gridH){
+        var map = path.gridH[v]
+        var border = canvas.rect(15,15,map.x,map.y);
+        border.attr("fill","#0080FF");
+    }
+    for(var v in path.gridV){
+        var map = path.gridV[v]
+        var border = canvas.rect(15,250,map.x,map.y);
+        border.attr("fill","#0080FF");
+    }
